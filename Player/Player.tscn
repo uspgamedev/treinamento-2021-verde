@@ -1,0 +1,238 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://Sprites/character/spritesheet.png" type="Texture" id=1]
+[ext_resource path="res://KinematicBody2D.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleShape2D" id=31]
+radius = 5.19229
+height = 15.5192
+
+[sub_resource type="Animation" id=1]
+resource_name = "Andando_baixo"
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 0 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Andando_cima"
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 13, 14, 15, 12 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Andando_direita"
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 9, 10, 11, 8 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Andando_esquerda"
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 5, 6, 7, 4 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Parado_baixo"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 2 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Parado_cima"
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 14 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "Parado_direita"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 6 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Parado_esquerda"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 11 ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=11]
+animation = "Andando_baixo"
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "Andando_cima"
+
+[sub_resource type="AnimationNodeAnimation" id=29]
+animation = "Andando_direita"
+
+[sub_resource type="AnimationNodeAnimation" id=30]
+animation = "Andando_esquerda"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=13]
+blend_point_0/node = SubResource( 11 )
+blend_point_0/pos = Vector2( 0, 1 )
+blend_point_1/node = SubResource( 12 )
+blend_point_1/pos = Vector2( 0, -1 )
+blend_point_2/node = SubResource( 29 )
+blend_point_2/pos = Vector2( -1, 0 )
+blend_point_3/node = SubResource( 30 )
+blend_point_3/pos = Vector2( 1, 0 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=25]
+animation = "Parado_esquerda"
+
+[sub_resource type="AnimationNodeAnimation" id=26]
+animation = "Parado_baixo"
+
+[sub_resource type="AnimationNodeAnimation" id=27]
+animation = "Parado_cima"
+
+[sub_resource type="AnimationNodeAnimation" id=28]
+animation = "Parado_direita"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=18]
+blend_point_0/node = SubResource( 25 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 26 )
+blend_point_1/pos = Vector2( 0, 1 )
+blend_point_2/node = SubResource( 27 )
+blend_point_2/pos = Vector2( 0, -1 )
+blend_point_3/node = SubResource( 28 )
+blend_point_3/pos = Vector2( 1, 0 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+
+[sub_resource type="AnimationNodeStateMachine" id=21]
+states/Andando/node = SubResource( 13 )
+states/Andando/position = Vector2( 377, 139 )
+states/Parado/node = SubResource( 18 )
+states/Parado/position = Vector2( 143, 139 )
+transitions = [ "Parado", "Andando", SubResource( 19 ), "Andando", "Parado", SubResource( 20 ) ]
+start_node = "Parado"
+end_node = "Andando"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=22]
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( 49.8187, 59.5577 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 4
+vframes = 4
+frame = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 2.98651, 13.3513 )
+rotation = 1.5708
+shape = SubResource( 31 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Andando_baixo = SubResource( 1 )
+anims/Andando_cima = SubResource( 4 )
+anims/Andando_direita = SubResource( 2 )
+anims/Andando_esquerda = SubResource( 3 )
+anims/Parado_baixo = SubResource( 5 )
+anims/Parado_cima = SubResource( 6 )
+anims/Parado_direita = SubResource( 7 )
+anims/Parado_esquerda = SubResource( 8 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 21 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 22 )
+parameters/Andando/blend_position = Vector2( -0.995363, 0.00862074 )
+parameters/Parado/blend_position = Vector2( 0, 0 )
