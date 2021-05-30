@@ -1,8 +1,9 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Assets/Cenário-Tileset.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Cenário-Tileset2.png" type="Texture" id=2]
 [ext_resource path="res://Assets/image.png" type="Texture" id=3]
+[ext_resource path="res://crystal.tscn" type="PackedScene" id=4]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 cull_mode = 2
@@ -436,7 +437,7 @@ visible = false
 color = Color( 0.0196078, 0.0196078, 0.0196078, 1 )
 
 [node name="Light2D" type="Light2D" parent="."]
-position = Vector2( 29.1601, 111.627 )
+position = Vector2( 17.8268, 110.96 )
 scale = Vector2( 0.93555, 1.04604 )
 texture = ExtResource( 3 )
 texture_scale = 0.5
@@ -446,3 +447,18 @@ range_item_cull_mask = 3
 shadow_enabled = true
 shadow_filter = 3
 shadow_filter_smooth = 15.0
+
+[node name="crystal" parent="." instance=ExtResource( 4 )]
+position = Vector2( 319.731, 217.863 )
+
+[node name="crystal2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 27.2344, 220.811 )
+
+[node name="crystal3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 46.8151, 42.7765 )
+
+[node name="crystal4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 205.857, 78.6478 )
+
+[node name="crystal5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 276.159, 78.0546 )
