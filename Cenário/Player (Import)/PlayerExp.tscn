@@ -4,7 +4,6 @@
 [ext_resource path="res://Player (Import)/spritesheet.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10.3121, 11.3038 )
 
 [sub_resource type="Animation" id=2]
 loop = true
@@ -207,9 +206,10 @@ light_mask = 2
 texture = ExtResource( 2 )
 hframes = 4
 vframes = 4
+frame = 13
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.388456, 9.43494 )
+position = Vector2( 0.0829487, 9.3171 )
 rotation = 1.5708
 shape = SubResource( 1 )
 
