@@ -4,7 +4,7 @@
 [ext_resource path="res://Player (Import)/spritesheet.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10.0073, 11.0555 )
+extents = Vector2( 10.3121, 11.3038 )
 
 [sub_resource type="Animation" id=2]
 loop = true
@@ -195,7 +195,7 @@ end_node = "Andando"
 [sub_resource type="AnimationNodeStateMachinePlayback" id=23]
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 18.3542, 36.3339 )
+position = Vector2( 19.4149, 36.5107 )
 scale = Vector2( 0.75, 0.75 )
 script = ExtResource( 1 )
 __meta__ = {
@@ -209,7 +209,7 @@ hframes = 4
 vframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.624158, 9.43494 )
+position = Vector2( -0.388456, 9.43494 )
 rotation = 1.5708
 shape = SubResource( 1 )
 

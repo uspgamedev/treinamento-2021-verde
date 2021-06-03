@@ -14,7 +14,7 @@ func _physics_process(delta):
 	var is_moving = Input.is_action_pressed("up") or Input.is_action_pressed("down") or Input.is_action_pressed("left") or Input.is_action_pressed("right")
 	
 	if is_moving:
-		speed = 100
+		speed = 125
 		 
 		if Input.is_action_pressed("up"):
 			direction = TOP
