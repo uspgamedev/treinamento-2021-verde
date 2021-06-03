@@ -22,12 +22,13 @@ tracks/0/keys = {
 }
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 4.8907
-height = 6.79211
+radius = 4.30935
+height = 5.26571
 
 [node name="crystal" type="Sprite"]
 light_mask = 2
-position = Vector2( 9.89732, 11.7429 )
+position = Vector2( 10.1622, 12.2064 )
+scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 1 )
 hframes = 12
 script = ExtResource( 3 )
@@ -39,7 +40,7 @@ script = ExtResource( 2 )
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( -0.530334, -1.52588e-05 )
+position = Vector2( -0.530334, -0.132446 )
 shape = SubResource( 2 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

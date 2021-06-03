@@ -195,7 +195,8 @@ end_node = "Andando"
 [sub_resource type="AnimationNodeStateMachinePlayback" id=23]
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 49.8187, 59.5577 )
+position = Vector2( 18.3542, 36.3339 )
+scale = Vector2( 0.75, 0.75 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true

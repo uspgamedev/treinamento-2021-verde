@@ -28,7 +28,7 @@ func _physics_process(delta):
 		speed = 0
 	
 	velocity = speed * direction * delta 
-	move_and_collide(velocity)
+	move_and_collide(velocity)		
 	
 	animar()
 
@@ -53,3 +53,4 @@ func animar():
 		anim_modo = "Par"
 	animation = anim_modo + "_" + anim_direc
 	get_node("AnimationPlayer").play(animation)
+
