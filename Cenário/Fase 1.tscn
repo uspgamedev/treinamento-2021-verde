@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://Assets/Cenário-Tileset.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Cenário-Tileset2.png" type="Texture" id=2]
@@ -6,121 +6,124 @@
 [ext_resource path="res://Player (Import)/PlayerExp.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Crystal (Import)/crystal.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Fase 1.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Avulsos.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Tocha.png" type="Texture" id=8]
+[ext_resource path="res://Tocha.gd" type="Script" id=9]
 
 [sub_resource type="OccluderPolygon2D" id=1]
-cull_mode = 2
+cull_mode = 1
 polygon = PoolVector2Array( 16, 24, 0, 24, 0, 0, 16, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 24, 0, 24 )
 
 [sub_resource type="OccluderPolygon2D" id=3]
-cull_mode = 2
+cull_mode = 1
 polygon = PoolVector2Array( 16, 24, 0, 24, 0, 0, 16, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=4]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 24, 0, 24 )
 
 [sub_resource type="OccluderPolygon2D" id=5]
-cull_mode = 2
+cull_mode = 1
 polygon = PoolVector2Array( 16, 24, 0, 24, 0, 0, 16, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 24, 0, 24 )
 
 [sub_resource type="OccluderPolygon2D" id=7]
-cull_mode = 2
+cull_mode = 1
 polygon = PoolVector2Array( 16, 24, 0, 24, 0, 0, 16, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=8]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 24, 0, 24 )
 
 [sub_resource type="OccluderPolygon2D" id=9]
-cull_mode = 2
+cull_mode = 1
 polygon = PoolVector2Array( 0, 0, 8, 0, 8, 32, 0, 32 )
 
 [sub_resource type="ConvexPolygonShape2D" id=10]
 points = PoolVector2Array( 0, 0, 8, 0, 8, 32, 0, 32 )
 
 [sub_resource type="OccluderPolygon2D" id=11]
-cull_mode = 2
+cull_mode = 1
 polygon = PoolVector2Array( 32, 0, 0, 0, 0, 8, 32, 8 )
 
 [sub_resource type="ConvexPolygonShape2D" id=12]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 8, 0, 8 )
 
 [sub_resource type="OccluderPolygon2D" id=13]
-cull_mode = 2
+cull_mode = 1
 polygon = PoolVector2Array( 8, 0, 0, 0, 0, 8, 8, 8 )
 
 [sub_resource type="ConvexPolygonShape2D" id=14]
 points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 
 [sub_resource type="OccluderPolygon2D" id=15]
-cull_mode = 2
+cull_mode = 1
 polygon = PoolVector2Array( 16, 0, 0, 0, 0, 8, 16, 8 )
 
 [sub_resource type="ConvexPolygonShape2D" id=16]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 8, 0, 8 )
 
 [sub_resource type="OccluderPolygon2D" id=17]
-cull_mode = 2
+cull_mode = 1
 polygon = PoolVector2Array( 24, 8, 0, 8, 0, 0, 24, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=18]
 points = PoolVector2Array( 0, 0, 24, 0, 24, 8, 0, 8 )
 
 [sub_resource type="OccluderPolygon2D" id=19]
-cull_mode = 2
+cull_mode = 1
 polygon = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=20]
 points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 
 [sub_resource type="OccluderPolygon2D" id=21]
-cull_mode = 2
+cull_mode = 1
 polygon = PoolVector2Array( 8, 0, 0, 0, 0, 16, 8, 16 )
 
 [sub_resource type="ConvexPolygonShape2D" id=22]
 points = PoolVector2Array( 0, 0, 8, 0, 8, 16, 0, 16 )
 
 [sub_resource type="OccluderPolygon2D" id=23]
-cull_mode = 2
+cull_mode = 1
 polygon = PoolVector2Array( 0, 0, 8, 0, 8, 24, 0, 24 )
 
 [sub_resource type="ConvexPolygonShape2D" id=24]
 points = PoolVector2Array( 0, 0, 8, 0, 8, 24, 0, 24 )
 
 [sub_resource type="OccluderPolygon2D" id=25]
-cull_mode = 2
+cull_mode = 1
 polygon = PoolVector2Array( 8, 24, 0, 24, 0, 0, 8, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=26]
 points = PoolVector2Array( 0, 0, 8, 0, 8, 24, 0, 24 )
 
 [sub_resource type="OccluderPolygon2D" id=27]
-cull_mode = 2
+cull_mode = 1
 polygon = PoolVector2Array( 8, 24, 0, 24, 0, 0, 8, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=28]
 points = PoolVector2Array( 0, 0, 8, 0, 8, 24, 0, 24 )
 
 [sub_resource type="OccluderPolygon2D" id=29]
-cull_mode = 2
+cull_mode = 1
 polygon = PoolVector2Array( 16, 24, 0, 24, 0, 0, 16, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=30]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 24, 0, 24 )
 
 [sub_resource type="OccluderPolygon2D" id=31]
-cull_mode = 2
+cull_mode = 1
 polygon = PoolVector2Array( 0, 0, 16, 0, 16, 24, 0, 24 )
 
 [sub_resource type="ConvexPolygonShape2D" id=32]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 24, 0, 24 )
 
 [sub_resource type="OccluderPolygon2D" id=33]
-cull_mode = 2
+cull_mode = 1
 polygon = PoolVector2Array( 0, 0, 16, 0, 16, 24, 0, 24 )
 
 [sub_resource type="ConvexPolygonShape2D" id=34]
@@ -588,6 +591,325 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 24, 0, 24 )
 5/shapes = [  ]
 5/z_index = 0
 
+[sub_resource type="OccluderPolygon2D" id=37]
+cull_mode = 2
+polygon = PoolVector2Array( 56, 40, 56, 104, 88, 104, 88, 88, 168, 88, 168, 40 )
+
+[sub_resource type="OccluderPolygon2D" id=38]
+cull_mode = 2
+polygon = PoolVector2Array( 120, 104, 104, 104, 104, 120, 56, 120, 56, 216, 88, 216, 88, 168, 120, 168 )
+
+[sub_resource type="OccluderPolygon2D" id=39]
+cull_mode = 2
+polygon = PoolVector2Array( 168, 104, 168, 136, 152, 136, 152, 184, 200, 184, 200, 136, 184, 136, 184, 104, 216, 104, 216, 184, 248, 184, 248, 216, 136, 216, 136, 104 )
+
+[sub_resource type="OccluderPolygon2D" id=40]
+cull_mode = 2
+polygon = PoolVector2Array( 232, 168, 264, 168, 264, 72, 312, 72, 312, 40, 248, 40, 248, 104, 232, 104 )
+
+[sub_resource type="OccluderPolygon2D" id=41]
+cull_mode = 2
+polygon = PoolVector2Array( 8, 40, 40, 40, 40, 104, -8, 104, -8, 80, 32, 80, 32, 48, 8, 48 )
+
+[sub_resource type="OccluderPolygon2D" id=42]
+cull_mode = 2
+polygon = PoolVector2Array( -8, 120, 40, 120, 40, 216, 8, 216, 8, 192, 32, 192, 32, 128, -8, 128 )
+
+[sub_resource type="OccluderPolygon2D" id=43]
+cull_mode = 2
+polygon = PoolVector2Array( 104, 232, 104, 184, 120, 184, 120, 232 )
+
+[sub_resource type="OccluderPolygon2D" id=44]
+cull_mode = 2
+polygon = PoolVector2Array( 264, 232, 264, 184, 296, 184, 296, 232 )
+
+[sub_resource type="OccluderPolygon2D" id=45]
+cull_mode = 2
+polygon = PoolVector2Array( 328, 184, 312, 184, 312, 136, 328, 136 )
+
+[sub_resource type="OccluderPolygon2D" id=46]
+cull_mode = 2
+polygon = PoolVector2Array( 280, 168, 280, 88, 296, 88, 296, 168 )
+
+[sub_resource type="OccluderPolygon2D" id=47]
+cull_mode = 2
+polygon = PoolVector2Array( 328, 120, 312, 120, 312, 88, 328, 88 )
+
+[sub_resource type="OccluderPolygon2D" id=48]
+cull_mode = 2
+polygon = PoolVector2Array( 200, 88, 200, 72, 216, 72, 216, 88, 232, 88, 232, 40, 184, 40, 184, 88 )
+
+[sub_resource type="TileSet" id=49]
+0/name = "Avulsos.png 0"
+0/texture = ExtResource( 7 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 16, 16 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Avulsos.png 1"
+1/texture = ExtResource( 7 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 16, 16, 16 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "Avulsos.png 2"
+2/texture = ExtResource( 7 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 32, 16, 16 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "Avulsos.png 3"
+3/texture = ExtResource( 7 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 16, 0, 16, 16 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "Avulsos.png 4"
+4/texture = ExtResource( 7 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 16, 16, 16, 16 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "Avulsos.png 5"
+5/texture = ExtResource( 7 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 16, 32, 16, 16 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+6/name = "Avulsos.png 6"
+6/texture = ExtResource( 7 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 32, 0, 16, 16 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
+6/shapes = [  ]
+6/z_index = 0
+7/name = "Avulsos.png 7"
+7/texture = ExtResource( 7 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 32, 16, 16, 16 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape_one_way = false
+7/shape_one_way_margin = 0.0
+7/shapes = [  ]
+7/z_index = 0
+8/name = "Avulsos.png 8"
+8/texture = ExtResource( 7 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 32, 32, 16, 16 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape_one_way = false
+8/shape_one_way_margin = 0.0
+8/shapes = [  ]
+8/z_index = 0
+9/name = "Avulsos.png 9"
+9/texture = ExtResource( 7 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 48, 0, 16, 16 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shape_offset = Vector2( 0, 0 )
+9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape_one_way = false
+9/shape_one_way_margin = 0.0
+9/shapes = [  ]
+9/z_index = 0
+10/name = "Avulsos.png 10"
+10/texture = ExtResource( 7 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 48, 16, 16, 16 )
+10/tile_mode = 0
+10/occluder_offset = Vector2( 0, 0 )
+10/navigation_offset = Vector2( 0, 0 )
+10/shape_offset = Vector2( 0, 0 )
+10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+10/shape_one_way = false
+10/shape_one_way_margin = 0.0
+10/shapes = [  ]
+10/z_index = 0
+11/name = "Avulsos.png 11"
+11/texture = ExtResource( 7 )
+11/tex_offset = Vector2( 0, 0 )
+11/modulate = Color( 1, 1, 1, 1 )
+11/region = Rect2( 48, 32, 16, 16 )
+11/tile_mode = 0
+11/occluder_offset = Vector2( 0, 0 )
+11/navigation_offset = Vector2( 0, 0 )
+11/shape_offset = Vector2( 0, 0 )
+11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+11/shape_one_way = false
+11/shape_one_way_margin = 0.0
+11/shapes = [  ]
+11/z_index = 0
+12/name = "Avulsos.png 12"
+12/texture = ExtResource( 7 )
+12/tex_offset = Vector2( 0, 0 )
+12/modulate = Color( 1, 1, 1, 1 )
+12/region = Rect2( 64, 0, 16, 16 )
+12/tile_mode = 0
+12/occluder_offset = Vector2( 0, 0 )
+12/navigation_offset = Vector2( 0, 0 )
+12/shape_offset = Vector2( 0, 0 )
+12/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+12/shape_one_way = false
+12/shape_one_way_margin = 0.0
+12/shapes = [  ]
+12/z_index = 0
+13/name = "Avulsos.png 13"
+13/texture = ExtResource( 7 )
+13/tex_offset = Vector2( 0, 0 )
+13/modulate = Color( 1, 1, 1, 1 )
+13/region = Rect2( 64, 16, 16, 16 )
+13/tile_mode = 0
+13/occluder_offset = Vector2( 0, 0 )
+13/navigation_offset = Vector2( 0, 0 )
+13/shape_offset = Vector2( 0, 0 )
+13/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+13/shape_one_way = false
+13/shape_one_way_margin = 0.0
+13/shapes = [  ]
+13/z_index = 0
+14/name = "Avulsos.png 14"
+14/texture = ExtResource( 7 )
+14/tex_offset = Vector2( 0, 0 )
+14/modulate = Color( 1, 1, 1, 1 )
+14/region = Rect2( 64, 32, 16, 16 )
+14/tile_mode = 0
+14/occluder_offset = Vector2( 0, 0 )
+14/navigation_offset = Vector2( 0, 0 )
+14/shape_offset = Vector2( 0, 0 )
+14/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+14/shape_one_way = false
+14/shape_one_way_margin = 0.0
+14/shapes = [  ]
+14/z_index = 0
+15/name = "Avulsos.png 15"
+15/texture = ExtResource( 7 )
+15/tex_offset = Vector2( 0, 0 )
+15/modulate = Color( 1, 1, 1, 1 )
+15/region = Rect2( 80, 0, 16, 16 )
+15/tile_mode = 0
+15/occluder_offset = Vector2( 0, 0 )
+15/navigation_offset = Vector2( 0, 0 )
+15/shape_offset = Vector2( 0, 0 )
+15/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+15/shape_one_way = false
+15/shape_one_way_margin = 0.0
+15/shapes = [  ]
+15/z_index = 0
+16/name = "Avulsos.png 16"
+16/texture = ExtResource( 7 )
+16/tex_offset = Vector2( 0, 0 )
+16/modulate = Color( 1, 1, 1, 1 )
+16/region = Rect2( 80, 16, 16, 16 )
+16/tile_mode = 0
+16/occluder_offset = Vector2( 0, 0 )
+16/navigation_offset = Vector2( 0, 0 )
+16/shape_offset = Vector2( 0, 0 )
+16/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+16/shape_one_way = false
+16/shape_one_way_margin = 0.0
+16/shapes = [  ]
+16/z_index = 0
+17/name = "Avulsos.png 17"
+17/texture = ExtResource( 7 )
+17/tex_offset = Vector2( 0, 0 )
+17/modulate = Color( 1, 1, 1, 1 )
+17/region = Rect2( 80, 32, 16, 16 )
+17/tile_mode = 0
+17/occluder_offset = Vector2( 0, 0 )
+17/navigation_offset = Vector2( 0, 0 )
+17/shape_offset = Vector2( 0, 0 )
+17/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+17/shape_one_way = false
+17/shape_one_way_margin = 0.0
+17/shapes = [  ]
+17/z_index = 0
+
+[sub_resource type="Animation" id=50]
+resource_name = "Tocha"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
 [node name="Fase 1" type="Node2D"]
 scale = Vector2( 3, 3 )
 script = ExtResource( 6 )
@@ -596,6 +918,7 @@ script = ExtResource( 6 )
 light_mask = 2
 tile_set = SubResource( 35 )
 cell_size = Vector2( 8, 8 )
+occluder_light_mask = 0
 format = 1
 tile_data = PoolIntArray( 0, 14, 0, 1, 12, 0, 3, 11, 0, 5, 7, 0, 7, 10, 0, 9, 7, 0, 11, 9, 0, 13, 7, 0, 15, 8, 0, 17, 7, 0, 19, 10, 0, 21, 7, 0, 23, 7, 0, 25, 11, 0, 27, 7, 0, 29, 10, 0, 31, 9, 0, 33, 7, 0, 35, 7, 0, 37, 8, 0, 39, 7, 0, 41, 14, 0, 43, 2, 0, 45, 3, 0, 47, 0, 0, 49, 4, 0, 51, 3, 0, 53, 5, 0, 262144, 20, 0, 262185, 14, 0, 262197, 5, 0, 327681, 15, 0, 327687, 14, 0, 327688, 15, 0, 327692, 15, 0, 327696, 15, 0, 327700, 21, 0, 327703, 15, 0, 327707, 17, 0, 327711, 14, 0, 327712, 18, 0, 327715, 15, 0, 393220, 14, 0, 393239, 20, 0, 393240, 20, 0, 393241, 22, 0, 393242, 23, 0, 393243, 20, 0, 393244, 20, 0, 393248, 14, 0, 393249, 12, 0, 393251, 11, 0, 393253, 13, 0, 524298, 20, 0, 524299, 12, 0, 524301, 10, 0, 524303, 9, 0, 524305, 8, 0, 524307, 13, 0, 524311, 22, 0, 524312, 23, 0, 524315, 22, 0, 524316, 23, 0, 524329, 20, 0, 524341, 5, 0, 589831, 19, 0, 589855, 14, 0, 720895, 7, 0, 655361, 9, 0, 655363, 13, 0, 655367, 12, 0, 655369, 13, 0, 655392, 14, 0, 655401, 20, 0, 720931, 17, 0, 720935, 17, 0, 786467, 20, 0, 786468, 20, 0, 786471, 22, 0, 786472, 23, 0, 786473, 20, 0, 786485, 5, 0, 851981, 17, 0, 851985, 15, 0, 851991, 15, 0, 851997, 14, 0, 851998, 17, 0, 917517, 20, 0, 917518, 14, 0, 917521, 14, 0, 917522, 14, 0, 917523, 13, 0, 917527, 12, 0, 917529, 14, 0, 917530, 14, 0, 917536, 20, 0, 917539, 14, 0, 917540, 14, 0, 917545, 20, 0, 1048575, 18, 0, 983041, 18, 0, 983044, 14, 0, 983047, 15, 0, 983051, 17, 0, 1048583, 14, 0, 1048608, 19, 0, 1048617, 20, 0, 1048629, 5, 0, 1114141, 15, 0, 1114151, 17, 0, 1179658, 20, 0, 1179659, 11, 0, 1179661, 13, 0, 1179665, 14, 0, 1179666, 14, 0, 1179673, 14, 0, 1179674, 14, 0, 1179677, 12, 0, 1179679, 13, 0, 1179683, 22, 0, 1179684, 23, 0, 1179687, 20, 0, 1245188, 14, 0, 1245224, 17, 0, 1310720, 5, 0, 1310727, 14, 0, 1310730, 14, 0, 1310759, 22, 0, 1310760, 23, 0, 1310761, 14, 0, 1310773, 5, 0, 1441809, 20, 0, 1441810, 19, 0, 1441817, 19, 0, 1441818, 20, 0, 1507332, 19, 0, 1507341, 17, 0, 1507346, 15, 0, 1507350, 15, 0, 1507355, 15, 0, 1507361, 15, 0, 1572864, 14, 0, 1572865, 12, 0, 1572867, 13, 0, 1572871, 12, 0, 1572873, 13, 0, 1572877, 20, 0, 1572878, 14, 0, 1572881, 12, 0, 1572883, 10, 0, 1572885, 9, 0, 1572887, 7, 0, 1572889, 8, 0, 1572891, 7, 0, 1572893, 13, 0, 1572897, 19, 0, 1572900, 14, 0, 1572905, 20, 0, 1572917, 5, 0, 1638433, 14, 0, 1703949, 14, 0, 1703977, 14, 0, 1835008, 20, 0, 1835022, 20, 0, 1835044, 20, 0, 1835061, 5, 0, 1900545, 15, 0, 1900549, 15, 0, 1900553, 15, 0, 1900559, 15, 0, 1900563, 15, 0, 1900567, 15, 0, 1900568, 6, 0, 1900571, 15, 0, 1900572, 6, 0, 1900575, 16, 0, 1900576, 17, 0, 1900580, 6, 0, 1900581, 15, 0, 1900584, 6, 0, 1900588, 6, 0, 1900592, 6, 0, 1900596, 6, 0 )
 
@@ -605,21 +928,88 @@ cell_size = Vector2( 8, 8 )
 format = 1
 tile_data = PoolIntArray( 196609, 5, 0, 196611, 4, 0, 196613, 0, 0, 196615, 1, 0, 196617, 0, 0, 196619, 2, 0, 196621, 0, 0, 196623, 3, 0, 196625, 0, 0, 196627, 2, 0, 196629, 0, 0, 196631, 0, 0, 196633, 2, 0, 196635, 3, 0, 196637, 1, 0, 196639, 0, 0, 196641, 5, 0, 196643, 0, 0, 196645, 2, 0, 196647, 3, 0, 327685, 2, 0, 327701, 2, 0, 327709, 1, 0, 327719, 0, 0, 458757, 3, 0, 458773, 4, 0, 458781, 0, 0, 458791, 2, 0, 589829, 4, 0, 589845, 1, 0, 589849, 1, 0, 589853, 2, 0, 589857, 1, 0, 589859, 1, 0, 589861, 1, 0, 589863, 4, 0, 720901, 2, 0, 720907, 0, 0, 720909, 3, 0, 720911, 2, 0, 720913, 0, 0, 720915, 1, 0, 720917, 1, 0, 720919, 4, 0, 720921, 2, 0, 720923, 0, 0, 720925, 5, 0, 720929, 0, 0, 720933, 2, 0, 917503, 0, 0, 851969, 2, 0, 851971, 0, 0, 851973, 0, 0, 851975, 5, 0, 851977, 4, 0, 851979, 1, 0, 851983, 1, 0, 851989, 3, 0, 851995, 3, 0, 852001, 3, 0, 852005, 0, 0, 983045, 1, 0, 983055, 5, 0, 983061, 0, 0, 983067, 1, 0, 983073, 2, 0, 983077, 3, 0, 983079, 1, 0, 1114117, 0, 0, 1114127, 1, 0, 1114131, 1, 0, 1114133, 5, 0, 1114135, 2, 0, 1114139, 0, 0, 1114145, 1, 0, 1114149, 5, 0, 1245189, 1, 0, 1245199, 3, 0, 1245203, 0, 0, 1245205, 1, 0, 1245207, 3, 0, 1245211, 1, 0, 1245217, 4, 0, 1245221, 1, 0, 1376261, 3, 0, 1376267, 0, 0, 1376269, 4, 0, 1376271, 2, 0, 1376275, 2, 0, 1376277, 1, 0, 1376279, 0, 0, 1376283, 2, 0, 1376285, 0, 0, 1376287, 5, 0, 1376289, 1, 0, 1376291, 2, 0, 1376293, 0, 0, 1507333, 0, 0, 1507339, 5, 0, 1507343, 2, 0, 1507359, 1, 0, 1507365, 2, 0, 1507367, 5, 0, 1638405, 1, 0, 1638411, 1, 0, 1638415, 1, 0, 1638431, 2, 0, 1638437, 3, 0, 1638439, 1, 0, 1769473, 3, 0, 1769475, 4, 0, 1769477, 0, 0, 1769479, 3, 0, 1769481, 1, 0, 1769483, 0, 0, 1769487, 0, 0, 1769489, 3, 0, 1769491, 4, 0, 1769493, 1, 0, 1769495, 0, 0, 1769497, 5, 0, 1769499, 2, 0, 1769501, 1, 0, 1769503, 3, 0, 1769509, 1, 0, 1769511, 0, 0 )
 
+[node name="Sombras" type="Node2D" parent="."]
+
+[node name="LightOccluder1" type="LightOccluder2D" parent="Sombras"]
+occluder = SubResource( 37 )
+
+[node name="LightOccluder2" type="LightOccluder2D" parent="Sombras"]
+occluder = SubResource( 38 )
+
+[node name="LightOccluder3" type="LightOccluder2D" parent="Sombras"]
+occluder = SubResource( 39 )
+
+[node name="LightOccluder4" type="LightOccluder2D" parent="Sombras"]
+occluder = SubResource( 40 )
+
+[node name="LightOccluder5" type="LightOccluder2D" parent="Sombras"]
+occluder = SubResource( 41 )
+
+[node name="LightOccluder6" type="LightOccluder2D" parent="Sombras"]
+occluder = SubResource( 42 )
+
+[node name="LightOccluder7" type="LightOccluder2D" parent="Sombras"]
+occluder = SubResource( 43 )
+
+[node name="LightOccluder8" type="LightOccluder2D" parent="Sombras"]
+occluder = SubResource( 44 )
+
+[node name="LightOccluder9" type="LightOccluder2D" parent="Sombras"]
+occluder = SubResource( 45 )
+
+[node name="LightOccluder10" type="LightOccluder2D" parent="Sombras"]
+occluder = SubResource( 46 )
+
+[node name="LightOccluder11" type="LightOccluder2D" parent="Sombras"]
+occluder = SubResource( 47 )
+
+[node name="LightOccluder12" type="LightOccluder2D" parent="Sombras"]
+occluder = SubResource( 48 )
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.0196078, 0.0196078, 0.0196078, 1 )
+color = Color( 0, 0, 0, 1 )
 
 [node name="crystal" parent="." instance=ExtResource( 5 )]
-position = Vector2( 176.507, 93.7561 )
+light_mask = 1
+position = Vector2( 24, 221.333 )
+scale = Vector2( 0.8, 0.8 )
 
 [node name="crystal2" parent="." instance=ExtResource( 5 )]
+light_mask = 1
 position = Vector2( 179.308, 61.8341 )
+scale = Vector2( 0.8, 0.8 )
 
 [node name="crystal3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 96.2337, 106.729 )
+light_mask = 1
+position = Vector2( 29.3333, 29.3333 )
+
+[node name="Caveiras" type="TileMap" parent="."]
+modulate = Color( 0.772549, 0.772549, 0.772549, 1 )
+scale = Vector2( 0.4, 0.4 )
+tile_set = SubResource( 49 )
+cell_size = Vector2( 4, 4 )
+format = 1
+tile_data = PoolIntArray( 917510, 0, 0, 2883709, 0, 0, 7471304, 0, 0 )
+
+[node name="Plantas" type="TileMap" parent="."]
+modulate = Color( 0.772549, 0.772549, 0.772549, 1 )
+scale = Vector2( 0.8, 0.8 )
+tile_set = SubResource( 49 )
+cell_size = Vector2( 2, 2 )
+format = 1
+tile_data = PoolIntArray( 262178, 13, 0, 262224, 14, 0, 327693, 12, 0, 327814, 14, 0, 2818130, 12, 0, 2883657, 13, 0, 2949189, 14, 0, 3604517, 13, 0, 3604523, 13, 0, 6357050, 13, 0, 7995484, 14, 0, 8126594, 12, 0 )
+
+[node name="AvulsosBaixo" type="TileMap" parent="."]
+modulate = Color( 0.772549, 0.772549, 0.772549, 1 )
+scale = Vector2( 0.6, 0.6 )
+tile_set = SubResource( 49 )
+cell_size = Vector2( 4, 4 )
+format = 1
+tile_data = PoolIntArray( 458761, 16, 0, 458773, 17, 0, 458882, 16, 0, 458885, 15, 0, 524324, 16, 0, 589957, 7, 0, 983109, 15, 0, 1769587, 16, 0, 1769593, 17, 0, 1835094, 3, 0, 2228300, 15, 0, 2359333, 10, 0, 2621539, 8, 0, 2686998, 15, 0, 3014696, 6, 0, 3473475, 17, 0, 3473485, 16, 0, 4390960, 16, 0, 4391030, 3, 0, 4784218, 6, 0, 4784257, 17, 0, 5701647, 15, 0, 5701687, 16, 0, 5701700, 16, 0, 5701733, 17, 0, 5767172, 11, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 modulate = Color( 0.635294, 0.635294, 0.635294, 1 )
-position = Vector2( 0, 107.333 )
+position = Vector2( 5.33333, 106.667 )
 scale = Vector2( 0.6, 0.6 )
 collision/safe_margin = 0.001
 
@@ -629,6 +1019,37 @@ texture = ExtResource( 3 )
 texture_scale = 0.5
 color = Color( 0.592157, 0.537255, 0.388235, 1 )
 energy = 2.5
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_filter = 3
+shadow_filter_smooth = 15.0
+
+[node name="AvulsosCima" type="TileMap" parent="."]
+modulate = Color( 0.772549, 0.772549, 0.772549, 1 )
+scale = Vector2( 0.6, 0.6 )
+tile_set = SubResource( 49 )
+cell_size = Vector2( 4, 4 )
+format = 1
+tile_data = PoolIntArray( 133, 2, 0, 851971, 4, 0, 983109, 15, 0, 1310830, 5, 0, 2162820, 10, 0, 2621495, 15, 0, 2621528, 15, 0, 3014670, 17, 0, 3080255, 5, 0, 3473541, 1, 0, 4784192, 9, 0, 4784207, 1, 0, 4784223, 15, 0, 6094851, 4, 0, 6094883, 16, 0, 6094887, 1, 0, 6094899, 11, 0, 6094972, 9, 0, 6094976, 15, 0, 6094981, 1, 0 )
+
+[node name="Tocha" type="Sprite" parent="."]
+modulate = Color( 0.72549, 0.72549, 0.72549, 1 )
+position = Vector2( 45.3333, 229.333 )
+texture = ExtResource( 8 )
+hframes = 2
+frame = 1
+script = ExtResource( 9 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tocha"]
+anims/Tocha = SubResource( 50 )
+
+[node name="Light2D" type="Light2D" parent="Tocha"]
+position = Vector2( -5.33333, -2.66667 )
+scale = Vector2( 1.55925, 1.7434 )
+texture = ExtResource( 3 )
+texture_scale = 0.22
+color = Color( 0.592157, 0.537255, 0.388235, 1 )
+energy = 2.0
 range_item_cull_mask = 3
 shadow_enabled = true
 shadow_filter = 3
