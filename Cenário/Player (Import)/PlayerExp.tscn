@@ -206,10 +206,10 @@ light_mask = 2
 texture = ExtResource( 2 )
 hframes = 4
 vframes = 4
-frame = 13
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.0829487, 9.3171 )
+position = Vector2( 0, 9 )
 rotation = 1.5708
 shape = SubResource( 1 )
 
@@ -230,3 +230,8 @@ active = true
 parameters/playback = SubResource( 23 )
 parameters/Andando/blend_position = Vector2( -0.995363, 0.00862074 )
 parameters/Parado/blend_position = Vector2( 0, 0 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( 0, 9 )
+enabled = true
+cast_to = Vector2( 16, 0 )

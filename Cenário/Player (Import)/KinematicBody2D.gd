@@ -1,53 +1,70 @@
 extends KinematicBody2D
 
+var speed = 60
+var tile_size = 16
+
 var direction = Vector2()
-var speed = 0
-var velocity = 0
+var last_position = Vector2()
+var target_position = Vector2()
 
-const TOP = Vector2(0, -1)
-const RIGHT = Vector2(1, 0)
-const DOWN = Vector2(0, 1)
-const LEFT = Vector2(-1, 0)
 
-func _physics_process(delta):
+func _ready():
+	target_position = position
+	last_position = position
 
-	var is_moving = Input.is_action_pressed("up") or Input.is_action_pressed("down") or Input.is_action_pressed("left") or Input.is_action_pressed("right")
-	
-	if is_moving:
-		speed = 125
-		 
-		if Input.is_action_pressed("up"):
-			direction = TOP
-		if Input.is_action_pressed("down"):
-			direction = DOWN
-		if Input.is_action_pressed("left"):
-			direction = LEFT
-		if Input.is_action_pressed("right"):
-			direction = RIGHT
+func _process(delta):
+	#MOVENDO
+	if $RayCast2D.is_colliding():
+		#COLIDIU
+		position = last_position
+		target_position = position
 	else:
-		speed = 0
+		#MOVER-SE
+		position += speed * direction * delta
+		
+		if position.distance_to(last_position) >= tile_size - speed * delta:
+			position = target_position
 	
-	velocity = speed * direction * delta 
-	move_and_collide(velocity)		
+	#PARADA
+	if position == target_position:
+		set_direction()
+		last_position = position
+		target_position += direction * tile_size
 	
 	animar()
+
+func set_direction():
+	var UP = Input.is_action_pressed("up")
+	var DOWN = Input.is_action_pressed("down")
+	var LEFT = Input.is_action_pressed("left")
+	var RIGHT = Input.is_action_pressed("right")
+
+	direction.x = int(RIGHT) - int(LEFT)
+	direction.y = int(DOWN) - int(UP)
+	
+	if direction.x != 0 && direction.y != 0:
+		direction = Vector2(0,0)
+	
+	if direction != Vector2():
+		$RayCast2D.cast_to = direction * tile_size
+
 
 func animar():
 	var anim_direc = "D"
 	var anim_modo = "Par"
 	var animation
 	
-	match direction:
-		TOP:
+	match get_node("RayCast2D").cast_to:
+		Vector2(0,-16):
 			anim_direc = "C"
-		DOWN:
+		Vector2(0,16):
 			anim_direc = "B"
-		LEFT:
+		Vector2(-16,0):
 			anim_direc = "E"
-		RIGHT:
+		Vector2(16,0):
 			anim_direc = "D"
 	
-	if speed != 0:
+	if direction != Vector2(0,0):
 		anim_modo = "And"
 	else:
 		anim_modo = "Par"
