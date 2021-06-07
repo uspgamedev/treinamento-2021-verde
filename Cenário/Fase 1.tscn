@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://Assets/Cenário-Tileset.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Cenário-Tileset2.png" type="Texture" id=2]
@@ -9,6 +9,10 @@
 [ext_resource path="res://Assets/Avulsos.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Tocha.png" type="Texture" id=8]
 [ext_resource path="res://Tocha.gd" type="Script" id=9]
+[ext_resource path="res://Crystal (Import)/crystal_static.gd" type="Script" id=10]
+[ext_resource path="res://Crystal (Import)/crystal3.gd" type="Script" id=11]
+[ext_resource path="res://Crystal (Import)/crystal4.gd" type="Script" id=12]
+[ext_resource path="res://Crystal (Import)/crystal5.gd" type="Script" id=13]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 cull_mode = 1
@@ -976,14 +980,26 @@ color = Color( 0, 0, 0, 1 )
 [node name="crystal" parent="." instance=ExtResource( 5 )]
 light_mask = 1
 position = Vector2( 24, 221.333 )
+script = ExtResource( 10 )
 
 [node name="crystal2" parent="." instance=ExtResource( 5 )]
 light_mask = 1
-position = Vector2( 179.308, 61.8341 )
+position = Vector2( 176, 96 )
 
 [node name="crystal3" parent="." instance=ExtResource( 5 )]
 light_mask = 1
-position = Vector2( 29.3333, 29.3333 )
+position = Vector2( 224, 128 )
+script = ExtResource( 11 )
+
+[node name="crystal4" parent="." instance=ExtResource( 5 )]
+light_mask = 1
+position = Vector2( 176, 224 )
+script = ExtResource( 12 )
+
+[node name="crystal5" parent="." instance=ExtResource( 5 )]
+light_mask = 1
+position = Vector2( 160, 176 )
+script = ExtResource( 13 )
 
 [node name="Caveiras" type="TileMap" parent="."]
 modulate = Color( 0.772549, 0.772549, 0.772549, 1 )
@@ -1047,7 +1063,7 @@ script = ExtResource( 9 )
 anims/Tocha = SubResource( 50 )
 
 [node name="Light2D" type="Light2D" parent="Tocha"]
-position = Vector2( -5.33333, -2.66667 )
+position = Vector2( -4.01049, -3.32811 )
 scale = Vector2( 1.55925, 1.7434 )
 texture = ExtResource( 3 )
 texture_scale = 0.22

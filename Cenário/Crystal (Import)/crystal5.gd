@@ -1,6 +1,6 @@
 extends Sprite
 
-var matrix = [[32, 32], [48, 48], [64,32], [80, 32], [48, 64], [176,48], [128,96], [48,80], [176,32], [112,32]]
+var matrix = [[128, 128], [128, 176], [96, 176], [96, 192], [112, 176], [128, 192], [128, 160], [128,144], [128, 244], [160, 176]]
 # matrix Axy = [0][0] = 32
 # matrix Axy = [0][1] = 32
 
@@ -41,4 +41,3 @@ func _on_Area2D_body_entered(body):
 	if body.get_name() == "Player":
 		get_parent().score += 1
 		queue_free()
-	
