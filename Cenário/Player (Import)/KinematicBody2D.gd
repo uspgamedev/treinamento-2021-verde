@@ -19,7 +19,6 @@ func _ready():
 	last_position = position
 	target_position = position
 
-
 func _process(delta):
 	#PAUSA DA ENTRADA
 	yield(get_tree().create_timer(0.71), "timeout")

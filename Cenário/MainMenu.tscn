@@ -24,6 +24,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=2]
 resource_name = "TochaMenu"
+length = 1.2
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -32,7 +33,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
+"times": PoolRealArray( 0, 0.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 0, 1 ]
@@ -119,7 +120,6 @@ position = Vector2( 0, -11 )
 scale = Vector2( 8, 8 )
 texture = ExtResource( 2 )
 hframes = 2
-frame = 1
 
 [node name="TochaPlayer" type="AnimationPlayer" parent="MarginContainer/Tocha/TextureRect/Sprite"]
 anims/TochaMenu = SubResource( 2 )
