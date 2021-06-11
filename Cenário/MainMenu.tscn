@@ -5,12 +5,11 @@
 [ext_resource path="res://Assets/Press-ENTER-to-start.png" type="Texture" id=3]
 [ext_resource path="res://MainMenu.gd" type="Script" id=4]
 
-[sub_resource type="Animation" id=1]
-resource_name = "TextoMainMenu"
+[sub_resource type="Animation" id=2]
 length = 4.0
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:modulate")
+tracks/0/path = NodePath(".:energy")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -19,10 +18,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1, 2, 3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0.235294 ), Color( 1, 1, 1, 0.117647 ), Color( 1, 1, 1, 0.176471 ), Color( 1, 1, 1, 0.0980392 ) ]
+"values": [ 6.0, 5.0, 5.5, 4.5 ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "TochaMenu"
 length = 1.2
 loop = true
@@ -43,7 +42,7 @@ tracks/0/keys = {
 length = 4.0
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:energy")
+tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -52,7 +51,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1, 2, 3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 6.0, 5.0, 5.5, 4.5 ]
+"values": [ Color( 1, 1, 1, 0.0980392 ), Color( 1, 1, 1, 0.117647 ), Color( 1, 1, 1, 0.176471 ), Color( 1, 1, 1, 0.0980392 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -72,75 +71,67 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ) ]
 }
 
-[node name="MainMenu" type="Node2D"]
+[node name="MainMenu" type="Node"]
 script = ExtResource( 4 )
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="Control" type="Control" parent="."]
 margin_right = 1280.0
 margin_bottom = 720.0
-custom_constants/margin_right = 0
-custom_constants/margin_top = 0
-custom_constants/margin_left = 0
-custom_constants/margin_bottom = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Fundo" type="ColorRect" parent="MarginContainer"]
+[node name="Fundo" type="ColorRect" parent="Control"]
 margin_right = 1280.0
 margin_bottom = 720.0
 color = Color( 0.0234375, 0.0198097, 0.0161819, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Texto" type="VBoxContainer" parent="MarginContainer"]
-margin_right = 1280.0
-margin_bottom = 720.0
-
-[node name="Press-ENTER-to-start" type="Sprite" parent="MarginContainer/Texto"]
-modulate = Color( 1, 1, 1, 0.210106 )
-position = Vector2( 640, 560 )
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 3 )
-
-[node name="ENTERPlayer" type="AnimationPlayer" parent="MarginContainer/Texto/Press-ENTER-to-start"]
-anims/TextoMainMenu = SubResource( 1 )
-
-[node name="Tocha" type="CenterContainer" parent="MarginContainer"]
-margin_right = 1280.0
-margin_bottom = 720.0
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/Tocha"]
+[node name="Tocha" type="TextureRect" parent="Control"]
 margin_left = 640.0
-margin_top = 360.0
-margin_right = 640.0
-margin_bottom = 360.0
+margin_top = 280.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Sprite" type="Sprite" parent="MarginContainer/Tocha/TextureRect"]
+[node name="Light2D" type="Light2D" parent="Control/Tocha"]
+texture = ExtResource( 1 )
+texture_scale = 3.0
+color = Color( 1, 0.87451, 0.611765, 1 )
+energy = 6.0
+
+[node name="LuzPlayer" type="AnimationPlayer" parent="Control/Tocha/Light2D"]
+anims/LuzMainMenu = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Control/Tocha"]
 modulate = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
-position = Vector2( 0, -11 )
 scale = Vector2( 8, 8 )
 texture = ExtResource( 2 )
 hframes = 2
 
-[node name="TochaPlayer" type="AnimationPlayer" parent="MarginContainer/Tocha/TextureRect/Sprite"]
-anims/TochaMenu = SubResource( 2 )
+[node name="TochaPlayer" type="AnimationPlayer" parent="Control/Tocha/Sprite"]
+anims/TochaMenu = SubResource( 1 )
 
-[node name="TextureRect2" type="TextureRect" parent="MarginContainer/Tocha"]
-margin_left = 640.0
-margin_top = 360.0
-margin_right = 640.0
-margin_bottom = 360.0
+[node name="Texto" type="TextureRect" parent="Control"]
+modulate = Color( 1, 1, 1, 0.0980392 )
+anchor_left = 0.325
+anchor_top = 0.7
+anchor_right = 0.325
+anchor_bottom = 0.7
+margin_right = 750.0
+margin_bottom = 56.0
+rect_scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Light2D" type="Light2D" parent="MarginContainer/Tocha/TextureRect2"]
-position = Vector2( 0, -11 )
-texture = ExtResource( 1 )
-texture_scale = 3.0
-color = Color( 1, 0.87451, 0.611765, 1 )
-energy = 5.30421
+[node name="ENTERPlayer" type="AnimationPlayer" parent="Control/Texto"]
+anims/TextoMainMenu = SubResource( 3 )
 
-[node name="LuzPlayer" type="AnimationPlayer" parent="MarginContainer/Tocha/TextureRect2/Light2D"]
-anims/LuzMainMenu = SubResource( 3 )
-
-[node name="Fade" type="ColorRect" parent="MarginContainer"]
+[node name="Fade" type="ColorRect" parent="Control"]
 margin_right = 1280.0
 margin_bottom = 720.0
 color = Color( 0, 0, 0, 0 )
@@ -148,5 +139,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="FadePlayer" type="AnimationPlayer" parent="MarginContainer/Fade"]
+[node name="FadePlayer" type="AnimationPlayer" parent="Control/Fade"]
 anims/Fade = SubResource( 4 )
+
+[node name="Tocha" type="CenterContainer" parent="Control/Fade"]
+margin_left = 640.0
+margin_right = 640.0
+margin_bottom = 720.0
