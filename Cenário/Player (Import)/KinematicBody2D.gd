@@ -1,18 +1,28 @@
 extends KinematicBody2D
 
-var speed = 60
+var speed = 50
 var tile_size = 16
 
 var direction = Vector2()
 var last_position = Vector2()
 var target_position = Vector2()
 
+var n = 0
 
 func _ready():
-	target_position = position
+	$AnimationPlayer.play("And_D")
+	$AnimationPlayer2.play("PlayerEntrada")
+	#PAUSA DA ENTRADA
+	yield(get_tree().create_timer(0.71), "timeout")
+	
+	get_parent().get_node("ColisaoEntrada/CollisionShape2D").disabled = false
 	last_position = position
+	target_position = position
 
 func _process(delta):
+	#PAUSA DA ENTRADA
+	yield(get_tree().create_timer(0.71), "timeout")
+	
 	#MOVENDO
 	if $RayCast2D.is_colliding():
 		#COLIDIU
@@ -25,7 +35,7 @@ func _process(delta):
 		if position.distance_to(last_position) >= tile_size - speed * delta:
 			position = target_position
 	
-	#PARADA
+	#PARADO
 	if position == target_position:
 		set_direction()
 		last_position = position
@@ -46,7 +56,7 @@ func set_direction():
 		direction = Vector2(0,0)
 	
 	if direction != Vector2():
-		$RayCast2D.cast_to = direction * tile_size
+		$RayCast2D.cast_to = direction * int(tile_size / 1.1)
 
 
 func animar():
@@ -55,13 +65,13 @@ func animar():
 	var animation
 	
 	match get_node("RayCast2D").cast_to:
-		Vector2(0,-16):
+		Vector2(0,-14):
 			anim_direc = "C"
-		Vector2(0,16):
+		Vector2(0,14):
 			anim_direc = "B"
-		Vector2(-16,0):
+		Vector2(-14,0):
 			anim_direc = "E"
-		Vector2(16,0):
+		Vector2(14,0):
 			anim_direc = "D"
 	
 	if direction != Vector2(0,0):
