@@ -979,26 +979,26 @@ color = Color( 0, 0, 0, 1 )
 
 [node name="crystal" parent="." instance=ExtResource( 5 )]
 light_mask = 1
-position = Vector2( 24, 221.333 )
+position = Vector2( 24, 220.307 )
 script = ExtResource( 10 )
 
 [node name="crystal2" parent="." instance=ExtResource( 5 )]
 light_mask = 1
-position = Vector2( 176, 96 )
+position = Vector2( 48, 48 )
 
 [node name="crystal3" parent="." instance=ExtResource( 5 )]
 light_mask = 1
-position = Vector2( 224, 128 )
+position = Vector2( 320, 48 )
 script = ExtResource( 11 )
 
 [node name="crystal4" parent="." instance=ExtResource( 5 )]
 light_mask = 1
-position = Vector2( 176, 224 )
+position = Vector2( 240, 224 )
 script = ExtResource( 12 )
 
 [node name="crystal5" parent="." instance=ExtResource( 5 )]
 light_mask = 1
-position = Vector2( 160, 176 )
+position = Vector2( 128, 208 )
 script = ExtResource( 13 )
 
 [node name="Caveiras" type="TileMap" parent="."]
@@ -1063,7 +1063,7 @@ script = ExtResource( 9 )
 anims/Tocha = SubResource( 50 )
 
 [node name="Light2D" type="Light2D" parent="Tocha"]
-position = Vector2( -4.01049, -3.32811 )
+position = Vector2( -4.01496, -4.16673 )
 scale = Vector2( 1.55925, 1.7434 )
 texture = ExtResource( 3 )
 texture_scale = 0.22
