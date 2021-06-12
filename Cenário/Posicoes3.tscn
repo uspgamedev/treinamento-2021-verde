@@ -1,0 +1,14 @@
+[gd_scene format=2]
+
+[node name="Posicoes3" type="Node2D"]
+position = Vector2( 129, 220.333 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="1" type="Position2D" parent="."]
+position = Vector2( 255.043, 6.15962 )
+
+[node name="2" type="Position2D" parent="."]
+position = Vector2( 0, 6.15963 )
+
+[node name="3" type="Position2D" parent="."]
+position = Vector2( 105.533, -165.838 )
