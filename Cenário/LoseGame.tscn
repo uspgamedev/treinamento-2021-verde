@@ -11,7 +11,7 @@
 [ext_resource path="res://Assets/Retry - PressR.png" type="Texture" id=9]
 [ext_resource path="res://Retry.gd" type="Script" id=10]
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=1]
 resource_name = "Boo"
 length = 5.0
 step = 0.05
@@ -44,8 +44,7 @@ tracks/0/keys = {
 "values": [ Color( 0.623529, 0.172549, 0.0705882, 0.705882 ), Color( 0.623529, 0.172549, 0.0705882, 0.313726 ), Color( 0.623529, 0.172549, 0.0705882, 1 ), Color( 0.623529, 0.172549, 0.0705882, 0.588235 ) ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "Luz_YouLW"
+[sub_resource type="Animation" id=3]
 length = 4.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:energy")
@@ -60,8 +59,7 @@ tracks/0/keys = {
 "values": [ 5.0, 4.0, 5.5, 4.5 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "Fade_LW"
+[sub_resource type="Animation" id=4]
 length = 1.2
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
@@ -121,7 +119,7 @@ size_flags_horizontal = 4
 texture = ExtResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/Bloco 1/Boo"]
-anims/Boo = SubResource( 4 )
+anims/Boo = SubResource( 1 )
 
 [node name="You Lose" type="TextureRect" parent="VBoxContainer/Bloco 1"]
 modulate = Color( 0.623529, 0.172549, 0.0705882, 0.588235 )
@@ -143,7 +141,7 @@ color = Color( 0.623529, 0.172549, 0.0705882, 1 )
 energy = 5.5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/Bloco 1/Light2D"]
-anims/Luz_YouLW = SubResource( 1 )
+anims/Luz_YouLW = SubResource( 3 )
 
 [node name="Bloco 2" type="VBoxContainer" parent="VBoxContainer"]
 margin_top = 467.0
@@ -183,7 +181,7 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Fade"]
-anims/Fade_LW = SubResource( 3 )
+anims/Fade_LW = SubResource( 4 )
 
 [connection signal="pressed" from="VBoxContainer/Bloco 2/Retry" to="VBoxContainer/Bloco 2/Retry" method="_on_Retry_pressed"]
 [connection signal="pressed" from="VBoxContainer/Bloco 2/Quit" to="VBoxContainer/Bloco 2/Quit" method="_on_Quit_pressed"]

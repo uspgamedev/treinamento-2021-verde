@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Quit.gd" type="Script" id=1]
 [ext_resource path="res://Retry.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/image.png" type="Texture" id=8]
 [ext_resource path="res://Crystal (Import)/crystal.tscn" type="PackedScene" id=9]
 [ext_resource path="res://WinGame.gd" type="Script" id=10]
+[ext_resource path="res://Crystal (Import)/crystal_static.gd" type="Script" id=11]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Luz_YouLW"
@@ -28,7 +29,7 @@ tracks/0/keys = {
 "values": [ 5.0, 4.0, 5.5, 4.5 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=2]
 resource_name = "Texto_YouWin"
 length = 4.0
 loop = true
@@ -79,6 +80,7 @@ __meta__ = {
 light_mask = 1
 position = Vector2( 650, 216 )
 scale = Vector2( 20, 20 )
+script = ExtResource( 11 )
 
 [node name="Light2D" type="Light2D" parent="."]
 position = Vector2( 640, 208 )
@@ -103,7 +105,7 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="You Win"]
-anims/Texto_YouWin = SubResource( 4 )
+anims/Texto_YouWin = SubResource( 2 )
 
 [node name="Retry" type="TextureButton" parent="."]
 modulate = Color( 0.14902, 0.403922, 0.482353, 1 )

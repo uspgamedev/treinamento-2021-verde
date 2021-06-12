@@ -11,3 +11,7 @@ func _unhandled_input(event):
 		get_node("Control/Fade/FadePlayer").play("Fade")
 		yield(get_tree().create_timer(1.2), "timeout")
 		get_tree().change_scene("res://Fase 1.tscn")
+		
+func _process(_delta):
+	if Input.is_action_pressed("ui_cancel"):
+		get_tree().quit()

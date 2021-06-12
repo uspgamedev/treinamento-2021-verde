@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Crystal (Import)/crystal/crystal.png" type="Texture" id=1]
 [ext_resource path="res://Crystal (Import)/crystal_animation.gd" type="Script" id=2]
-[ext_resource path="res://Crystal (Import)/crystal.gd" type="Script" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "crystal"
@@ -31,7 +30,6 @@ position = Vector2( 10.1622, 12.2064 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 1 )
 hframes = 12
-script = ExtResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/crystal = SubResource( 1 )

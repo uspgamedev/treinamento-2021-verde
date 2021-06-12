@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/Press-ENTER-to-start.png" type="Texture" id=3]
 [ext_resource path="res://MainMenu.gd" type="Script" id=4]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 length = 4.0
 loop = true
 tracks/0/type = "value"
@@ -21,8 +21,7 @@ tracks/0/keys = {
 "values": [ 6.0, 5.0, 5.5, 4.5 ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "TochaMenu"
+[sub_resource type="Animation" id=2]
 length = 1.2
 loop = true
 tracks/0/type = "value"
@@ -103,7 +102,7 @@ color = Color( 1, 0.87451, 0.611765, 1 )
 energy = 6.0
 
 [node name="LuzPlayer" type="AnimationPlayer" parent="Control/Tocha/Light2D"]
-anims/LuzMainMenu = SubResource( 2 )
+anims/LuzMainMenu = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Control/Tocha"]
 modulate = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
@@ -112,7 +111,7 @@ texture = ExtResource( 2 )
 hframes = 2
 
 [node name="TochaPlayer" type="AnimationPlayer" parent="Control/Tocha/Sprite"]
-anims/TochaMenu = SubResource( 1 )
+anims/TochaMenu = SubResource( 2 )
 
 [node name="Texto" type="TextureRect" parent="Control"]
 modulate = Color( 1, 1, 1, 0.0980392 )
