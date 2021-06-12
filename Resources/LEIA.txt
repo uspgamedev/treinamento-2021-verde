@@ -1,0 +1,8 @@
+Salve, salve
+
+Obs é um script de um tilemap 8x8 da imagem xao.png, acho que talvez tenha que colocar ele denovo :/
+
+Problemas:
+
+-Colocar mais de um fantasma no mesmo nó explode o programa, acho que é só mudar o nome da AnimationTree ou alguma coisa assim
+-Não consegui resolver os erros de posicionamento, mas ele anda e te segue
