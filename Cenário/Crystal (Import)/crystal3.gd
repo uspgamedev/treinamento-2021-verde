@@ -32,7 +32,6 @@ func _ready():
 	$AnimationPlayer.play('crystal')
 	var x_rand = (randi() % 10)
 	var rnd_position = Vector2(matrix[x_rand][0], matrix[x_rand][1])
-	print (x_rand)
 	$".".position = rnd_position
 	
 	

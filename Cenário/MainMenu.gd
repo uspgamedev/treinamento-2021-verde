@@ -9,7 +9,7 @@ func _unhandled_input(event):
 	if event.is_action_pressed("ui_accept"):
 		set_process_input(false)
 		get_node("Control/Fade/FadePlayer").play("Fade")
-		yield(get_tree().create_timer(1.2), "timeout")
+		yield(get_node("Control/Fade/FadePlayer"), "animation_finished")
 		get_tree().change_scene("res://Fase 1.tscn")
 		
 func _process(_delta):

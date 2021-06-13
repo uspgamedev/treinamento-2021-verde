@@ -8,20 +8,27 @@ var last_position = Vector2()
 var target_position = Vector2()
 
 var n = 0
+var m = 0
 
 func _ready():
 	$AnimationPlayer.play("And_D")
 	$AnimationPlayer2.play("PlayerEntrada")
-	#PAUSA DA ENTRADA
-	yield(get_tree().create_timer(0.71), "timeout")
 	
+	#PAUSA DA ENTRADA
+	yield(get_node("AnimationPlayer2"), "animation_finished")
+	
+	#SPAWNAR COLISÃO DA ENTRADA
 	get_parent().get_node("ColisaoEntrada/CollisionShape2D").disabled = false
+	
+	#RESETAR VARIÁVEIS
 	last_position = position
 	target_position = position
 
 func _process(delta):
 	#PAUSA DA ENTRADA
-	yield(get_tree().create_timer(0.71), "timeout")
+	if n == 0:
+		yield(get_node("AnimationPlayer2"), "animation_finished")
+		n = 1
 	
 	#MOVENDO
 	if $RayCast2D.is_colliding():
@@ -44,6 +51,13 @@ func _process(delta):
 	animar()
 
 func set_direction():
+	#PAUSA DA ENTRADA
+	if m == 0:
+		yield(get_tree().create_timer(0.1), "timeout")
+		m = 1
+		return
+	
+	#DETERMINAR DIREÇÃO	
 	var UP = Input.is_action_pressed("up")
 	var DOWN = Input.is_action_pressed("down")
 	var LEFT = Input.is_action_pressed("left")
@@ -52,9 +66,11 @@ func set_direction():
 	direction.x = int(RIGHT) - int(LEFT)
 	direction.y = int(DOWN) - int(UP)
 	
+	#IMPEDIR MOVIMENTO DIAGONAL
 	if direction.x != 0 && direction.y != 0:
 		direction = Vector2(0,0)
 	
+	#APONTAR RAYCAST
 	if direction != Vector2():
 		$RayCast2D.cast_to = direction * int(tile_size / 1.1)
 
@@ -78,6 +94,7 @@ func animar():
 		anim_modo = "And"
 	else:
 		anim_modo = "Par"
+		
 	animation = anim_modo + "_" + anim_direc
 	get_node("AnimationPlayer").play(animation)
 

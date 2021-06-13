@@ -56,7 +56,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=4]
 resource_name = "Fade"
 length = 1.2
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
 tracks/0/interp = 1
@@ -140,8 +139,3 @@ __meta__ = {
 
 [node name="FadePlayer" type="AnimationPlayer" parent="Control/Fade"]
 anims/Fade = SubResource( 4 )
-
-[node name="Tocha" type="CenterContainer" parent="Control/Fade"]
-margin_left = 640.0
-margin_right = 640.0
-margin_bottom = 720.0

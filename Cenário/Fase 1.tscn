@@ -1036,31 +1036,26 @@ tile_data = PoolIntArray( 458761, 16, 0, 458773, 17, 0, 458882, 16, 0, 458885, 1
 [node name="crystal" parent="." instance=ExtResource( 5 )]
 light_mask = 1
 position = Vector2( 24, 221.333 )
-scale = Vector2( 0.8, 0.8 )
 script = ExtResource( 10 )
 
 [node name="crystal2" parent="." instance=ExtResource( 5 )]
 light_mask = 1
 position = Vector2( 48, 24 )
-scale = Vector2( 0.8, 0.8 )
 script = ExtResource( 13 )
 
 [node name="crystal3" parent="." instance=ExtResource( 5 )]
 light_mask = 1
 position = Vector2( 320, 61.3333 )
-scale = Vector2( 0.8, 0.8 )
 script = ExtResource( 14 )
 
 [node name="crystal4" parent="." instance=ExtResource( 5 )]
 light_mask = 1
 position = Vector2( 256, 173.333 )
-scale = Vector2( 0.8, 0.8 )
 script = ExtResource( 12 )
 
 [node name="crystal5" parent="." instance=ExtResource( 5 )]
 light_mask = 1
 position = Vector2( 128, 176 )
-scale = Vector2( 0.8, 0.8 )
 script = ExtResource( 11 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
