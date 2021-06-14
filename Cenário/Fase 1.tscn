@@ -1082,11 +1082,6 @@ light_mask = 1
 position = Vector2( 128, 176 )
 script = ExtResource( 11 )
 
-[node name="Ghost" parent="." instance=ExtResource( 16 )]
-position = Vector2( 176.031, 176.338 )
-scale = Vector2( 0.75, 0.75 )
-collision_mask = 2
-
 [node name="Player" parent="." instance=ExtResource( 4 )]
 modulate = Color( 0.635294, 0.635294, 0.635294, 1 )
 position = Vector2( -48, 106.667 )
@@ -1107,6 +1102,15 @@ shadow_filter_smooth = 15.0
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Player"]
 anims/PlayerEntrada = SubResource( 51 )
+
+[node name="Ghost" parent="." instance=ExtResource( 16 )]
+position = Vector2( 176.031, 176.338 )
+scale = Vector2( 0.75, 0.75 )
+collision_mask = 2
+
+[node name="Ghost2" parent="." instance=ExtResource( 18 )]
+position = Vector2( 192, 176 )
+scale = Vector2( 0.75, 0.75 )
 
 [node name="AvulsosCima" type="TileMap" parent="."]
 modulate = Color( 0.772549, 0.772549, 0.772549, 1 )
@@ -1147,29 +1151,12 @@ position = Vector2( -16, 112 )
 shape = SubResource( 53 )
 disabled = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
-pause_mode = 2
-margin_left = -48.0
-margin_right = 378.0
-margin_bottom = 240.0
-color = Color( 0, 0, 0, 0 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
-anims/FadeOut = SubResource( 54 )
-
 [node name="Camera" type="Position2D" parent="."]
 visible = false
 position = Vector2( 176, 120 )
 
 [node name="Camera2D" type="Camera2D" parent="Camera"]
 current = true
-
-[node name="Ghost2" parent="." instance=ExtResource( 18 )]
-position = Vector2( 192, 176 )
-scale = Vector2( 0.75, 0.75 )
 
 [node name="Posicoes1" type="Node2D" parent="."]
 
@@ -1216,3 +1203,16 @@ position = Vector2( 320, 208 )
 
 [node name="3" type="Position2D" parent="Posicoes4"]
 position = Vector2( 224, 128 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+pause_mode = 2
+margin_left = -48.0
+margin_right = 378.0
+margin_bottom = 240.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
+anims/FadeOut = SubResource( 54 )
