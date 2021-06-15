@@ -22,7 +22,7 @@ onready var timer2 = get_node("Random_timer")
 var random_timer_on = false
 var path_timer_on = false
 
-export(float) var SPEED = 20.0
+export(float) var SPEED = 30.0
 enum STATES { IDLE, FOLLOW }
 var _state = null
 
@@ -33,7 +33,7 @@ var target_position = Vector2()
 var velocity = Vector2()
 
 func _ready():
-	start_timer.set_wait_time(7)
+	start_timer.set_wait_time(4)
 	timer.set_wait_time(15)
 	timer2.set_wait_time(30)
 	start_timer.start()
@@ -41,9 +41,10 @@ func _ready():
 
 
 func _change_state(new_state):
+	print(target_position)
 	if new_state == STATES.FOLLOW:
 		#print("entrou")
-		path = get_parent().get_node("Obs").find_path(position, target_position)
+		path = get_parent().get_node("TileMap").find_path(position, target_position)
 		#print("posição é:" , target_position)
 		if not path or len(path) == 1:
 			#print(target_position, " não é caminho")
@@ -91,7 +92,7 @@ func animate(direction):
 		animationTree.set("parameters/a/blend_position", direction)
 		animationTree.set("parameters/Walking/blend_position", direction)
 		pass
-	else: #????????? ta funcionando mas não do jeito que devia
+	else: 
 		animationState.travel("Idle")
 	
 
@@ -138,8 +139,8 @@ func get_patrol_path():
 
 func get_random_pos():
 
-	randomx = (rand_range(97/3,1329/3))
-	randomy = (rand_range(97/3,879/3))
+	randomx = (rand_range(15,177))
+	randomy = (rand_range(111,223))
 	target_position.x = randomx
 	target_position.y = randomy
 	#print(target_position)
