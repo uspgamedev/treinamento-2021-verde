@@ -13,7 +13,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "Boo"
-length = 5.0
+length = 15.0
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
@@ -46,6 +46,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=3]
 length = 4.0
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:energy")
 tracks/0/interp = 1
@@ -112,8 +113,8 @@ custom_constants/separation = -10
 alignment = 1
 
 [node name="Boo" type="TextureRect" parent="VBoxContainer/Bloco 1"]
-margin_left = 535.0
-margin_right = 745.0
+margin_left = 536.0
+margin_right = 746.0
 margin_bottom = 270.0
 size_flags_horizontal = 4
 texture = ExtResource( 1 )

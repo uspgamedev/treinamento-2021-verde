@@ -98,3 +98,12 @@ func animar():
 	animation = anim_modo + "_" + anim_direc
 	get_node("AnimationPlayer").play(animation)
 
+
+
+func _on_player_body_entered(body):
+	if body.get_name() != "Player":
+		get_tree().paused = true
+		get_parent().get_node("ColorRect/AnimationPlayer").play("FadeOut")
+		yield(get_parent().get_node("ColorRect/AnimationPlayer"), "animation_finished")
+		get_tree().paused = false
+		get_tree().change_scene("res://LoseGame.tscn")

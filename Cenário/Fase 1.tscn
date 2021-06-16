@@ -626,15 +626,15 @@ polygon = PoolVector2Array( 8, 40, 40, 40, 40, 104, -8, 104, -8, 80, 32, 80, 32,
 cull_mode = 1
 polygon = PoolVector2Array( -8, 120, 40, 120, 40, 216, 8, 216, 8, 192, 32, 192, 32, 128, -8, 128 )
 
-[sub_resource type="OccluderPolygon2D" id=45]
+[sub_resource type="OccluderPolygon2D" id=43]
 cull_mode = 1
 polygon = PoolVector2Array( 328, 184, 312, 184, 312, 136, 328, 136 )
 
-[sub_resource type="OccluderPolygon2D" id=43]
+[sub_resource type="OccluderPolygon2D" id=44]
 cull_mode = 1
 polygon = PoolVector2Array( 104, 232, 104, 184, 120, 184, 120, 232 )
 
-[sub_resource type="OccluderPolygon2D" id=44]
+[sub_resource type="OccluderPolygon2D" id=45]
 cull_mode = 1
 polygon = PoolVector2Array( 264, 232, 264, 184, 296, 184, 296, 232 )
 
@@ -1007,13 +1007,13 @@ occluder = SubResource( 41 )
 occluder = SubResource( 42 )
 
 [node name="LightOccluder9" type="LightOccluder2D" parent="Sombras"]
-occluder = SubResource( 45 )
-
-[node name="LightOccluder7" type="LightOccluder2D" parent="Sombras"]
 occluder = SubResource( 43 )
 
-[node name="LightOccluder8" type="LightOccluder2D" parent="Sombras"]
+[node name="LightOccluder7" type="LightOccluder2D" parent="Sombras"]
 occluder = SubResource( 44 )
+
+[node name="LightOccluder8" type="LightOccluder2D" parent="Sombras"]
+occluder = SubResource( 45 )
 
 [node name="LightOccluder10" type="LightOccluder2D" parent="Sombras"]
 occluder = SubResource( 46 )
@@ -1029,6 +1029,7 @@ visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="TileMap" type="TileMap" parent="."]
+visible = false
 tile_set = SubResource( 49 )
 cell_size = Vector2( 4, 4 )
 format = 1
@@ -1086,7 +1087,7 @@ script = ExtResource( 11 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 modulate = Color( 0.635294, 0.635294, 0.635294, 1 )
-position = Vector2( 240.185, 27.1666 )
+position = Vector2( 13.1157, 107.539 )
 scale = Vector2( 0.6, 0.6 )
 collision_layer = 2
 collision/safe_margin = 0.001

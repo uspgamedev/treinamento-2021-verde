@@ -72,7 +72,7 @@ func _change_state(new_state):
 	_state = new_state
 
 
-func _process(delta):
+func _process(_delta):
 	print(target_position)
 	if not _state == STATES.FOLLOW:
 		move_decision()
@@ -92,15 +92,15 @@ func _process(delta):
 
 ############## Comandos de decisão de movimento ################
 
-func get_pos_player(player):
+func get_pos_player():
 
 	target_position.x = (player.global_position.x /3)
-	target_position.y = ((player.global_position.y - 3) /3)
+	target_position.y = ((player.global_position.y + 9) /3)
 	_change_state(STATES.FOLLOW)
 
 func move_decision():
 	if player_in_range == true:
-		get_pos_player(player)
+		get_pos_player()
 	else:
 		if not timer_on:
 			get_patrol_path()
