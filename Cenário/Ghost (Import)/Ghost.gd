@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+# Salva ultima posição
+
 
 
 var randomx # Variaveis de posição aleatoria
@@ -18,15 +20,13 @@ onready var animationState = animationTree.get("parameter/playback")
 
 # Timers
 onready var start_timer = get_node("Start_timer") # Timer para ficar parado no inicio
-onready var timer = get_node("Path_timer") # Tempo que fica fazendo patrulha
-onready var timer2 = get_node("Random_timer") # Tempo que anda aleatoriamente
+onready var Chase_tolerence_timer = get_node("Chase_state") # Tempo que anda aleatoriamente
 
 # Variaveis que definem qual timer ativar
 
-var random_timer_on = false 
-var path_timer_on = false
+var timer_on = true
 
-export(float) var SPEED = 20.0
+export(float) var SPEED = 40.0
 
 # Estado que o progama tem que rodar 
 enum STATES { IDLE, FOLLOW }
@@ -52,8 +52,7 @@ var velocity = Vector2()
 func _ready():
 	# Define os timers
 	start_timer.set_wait_time(1)
-	timer.set_wait_time(30)
-	timer2.set_wait_time(15)
+	Chase_tolerence_timer.set_wait_time(3)
 	start_timer.start()
 	_change_state(STATES.IDLE)
 
@@ -74,12 +73,11 @@ func _change_state(new_state):
 
 
 func _process(delta):
-
 	if not _state == STATES.FOLLOW:
 		move_decision()
 		return
 	if player_in_range:
-		move_decision()
+		get_pos_player(player)
 	var arrived_to_next_point = move_to(target_point_world)
 	if arrived_to_next_point:
 		path.remove(0)
@@ -87,6 +85,7 @@ func _process(delta):
 			_change_state(STATES.IDLE)
 			return
 		target_point_world = path[0]
+		
 
 
 ############## Comandos de decisão de movimento ################
@@ -100,31 +99,24 @@ func move_decision():
 	if player_in_range == true:
 		get_pos_player(player)
 	else:
-		if random_timer_on:
+		if not timer_on:
 			get_patrol_path()
-		if path_timer_on:
-			get_random_pos()
 
 func get_patrol_path():
 	if path_pos == 3:
 		path_pos = 0
 	var pos1 = get_parent().get_node("Posicoes2").get_child(path_pos)
 	target_position = pos1.global_position / 3
+	print("Patrulha atual é: ", path_pos)
 	path_pos += 1
 	_change_state(STATES.FOLLOW)	
 
-func get_random_pos():
-
-	randomx = (rand_range(175,320))
-	randomy = (rand_range(32,128))
-	target_position.x = randomx
-	target_position.y = randomy
-	_change_state(STATES.FOLLOW)
 
 ############## Comandos movimento ################
 
 # Esta função move o inimigo para o caminho selecionado
 func move_to(world_position):
+
 	var MASS = 1.0 #10
 	var ARRIVE_DISTANCE = 10.0 # 10
 
@@ -148,24 +140,32 @@ func animate(direction):
 ############## Comandos de "Visão" do inimigo ################
 
 # Detecção da "visão" horizontal
-func _on_Area2D_body_entered(body):
-	if body == player:
-		player_in_range = true
-
-func _on_Area2D_body_exited(body):
-	if body == player:
-		player_in_range = false
-		#print("Player no range ", player_in_range)
-# # # # # #
-
-# Detecção da "visão" vertical
-func _on_Area2D2_body_entered(body):
-	if body == player:
-		player_in_range = true
-
-func _on_Area2D2_body_exited(body):
-	if body == player:
-		player_in_range = false
+#func _on_Area2D_body_entered(body):
+#	print("Vagabundo entrou")
+#	if body == player:
+#		Chase_tolerence_timer.stop()
+#		player_in_range = true
+#
+#func _on_Area2D_body_exited(body):
+#	print("Vagabundo saiu")
+#	if body == player:
+#		Chase_tolerence_timer.stop()
+#		Chase_tolerence_timer.start()
+#		#print("Player no range ", player_in_range)
+## # # # # #
+#
+## Detecção da "visão" vertical
+#func _on_Area2D2_body_entered(body):
+#	print("Vagabundo entrou")
+#	if body == player:
+#		Chase_tolerence_timer.stop()
+#		player_in_range = true
+#
+#func _on_Area2D2_body_exited(body):
+#	print("Vagabundo saiu")
+#	if body == player:
+#		Chase_tolerence_timer.stop()
+#		Chase_tolerence_timer.start()
 # # # # # #
 
 ############## Comandos de Temporizadores ################
@@ -174,38 +174,18 @@ func _on_Area2D2_body_exited(body):
 
 func activate_timer(mode):
 	if mode == 0:
+		print("passou aqui")
 		start_timer.stop()
-		random_timer_on = true
-		timer.start()
-	elif mode == 1:
-		timer.stop()
-		timer2.start()
-	else:
-		timer2.stop()
-		timer.start()
-	random_timer_on = not random_timer_on
-	path_timer_on = not path_timer_on
+		timer_on = false
 	_change_state(STATES.FOLLOW)
 	
-
-# Função ativada quando o timer aleatorio vai a zero
-func _on_Timer_timeout(): # Posição aleatoria
-	activate_timer(2)
-
-
-# Função ativada quando o timer de patrulha vai a zero
-func _on_Path_timer_timeout():
-	activate_timer(1)
-
 
 # Função ativada quando o timer de inicio vai a zero, só ativa uma vez
 func _on_Start_timer_timeout():
 	activate_timer(0)
 
-func _input(event):
-	if event.is_action_pressed('click'):
-		if Input.is_key_pressed(KEY_SHIFT):
-			global_position = get_global_mouse_position() / 3
-		else:
-			target_position = get_global_mouse_position() / 3
-			print(target_position)
+
+
+func _on_Chase_state_timeout():
+	print("Acabou o tempo")
+	player_in_range = false

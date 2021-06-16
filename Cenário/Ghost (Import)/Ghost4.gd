@@ -106,7 +106,7 @@ func move_decision():
 func get_patrol_path():
 	if path_pos == 3:
 		path_pos = 0
-	var pos1 = get_parent().get_node("Posicoes1").get_child(path_pos)
+	var pos1 = get_parent().get_node("Posicoes3").get_child(path_pos)
 	target_position = pos1.global_position / 3
 	print("Patrulha atual é: ", path_pos)
 	path_pos += 1

@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=2]
 
-[ext_resource path="res://Ghost (Import)/Ghost2.gd" type="Script" id=1]
+[ext_resource path="res://Ghost (Import)/Ghost4.gd" type="Script" id=1]
 [ext_resource path="res://Ghost (Import)/spritesheet_ghost.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -149,7 +149,7 @@ end_node = "Walking"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=20]
 
-[node name="Ghost2" type="KinematicBody2D" groups=[
+[node name="Ghost4" type="KinematicBody2D" groups=[
 "Ghost",
 ]]
 collision_layer = 16
@@ -160,7 +160,7 @@ texture = ExtResource( 2 )
 offset = Vector2( 0, -12 )
 hframes = 5
 vframes = 2
-frame = 8
+frame = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
