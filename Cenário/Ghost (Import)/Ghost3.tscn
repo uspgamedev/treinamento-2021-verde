@@ -160,7 +160,7 @@ texture = ExtResource( 2 )
 offset = Vector2( 0, -12 )
 hframes = 5
 vframes = 2
-frame = 6
+frame = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2( 2, 2 )
