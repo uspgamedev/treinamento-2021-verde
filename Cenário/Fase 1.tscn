@@ -1025,6 +1025,7 @@ occluder = SubResource( 47 )
 occluder = SubResource( 48 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1110,17 +1111,17 @@ position = Vector2( 176.128, 160.762 )
 scale = Vector2( 0.65, 0.65 )
 collision_mask = 2
 
-[node name="Ghost2" parent="." instance=ExtResource( 18 )]
+[node name="Jafferson" parent="." instance=ExtResource( 18 )]
 position = Vector2( 319.597, 46.0346 )
 scale = Vector2( 0.65, 0.65 )
 SPEED = 42.0
 
-[node name="Ghost3" parent="." instance=ExtResource( 19 )]
+[node name="Tônia" parent="." instance=ExtResource( 19 )]
 position = Vector2( 129.153, 225.747 )
 scale = Vector2( 0.65, 0.65 )
 SPEED = 38.0
 
-[node name="Ghost4" parent="." instance=ExtResource( 20 )]
+[node name="Shirley" parent="." instance=ExtResource( 20 )]
 position = Vector2( 304, 176 )
 scale = Vector2( 0.65, 0.65 )
 SPEED = 35.0

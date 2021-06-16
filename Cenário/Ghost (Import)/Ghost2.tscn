@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Ghost (Import)/Ghost2.gd" type="Script" id=1]
-[ext_resource path="res://Ghost (Import)/spritesheet_ghost.png" type="Texture" id=2]
+[ext_resource path="res://Ghost (Import)/spritesheet_red_ghost.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 2.57425
