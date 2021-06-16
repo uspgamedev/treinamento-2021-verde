@@ -200,18 +200,14 @@ radius = 8.75357
 [node name="Player" type="KinematicBody2D"]
 scale = Vector2( 0.75, 0.75 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="."]
 light_mask = 2
 position = Vector2( -0.0275135, 8.93529 )
 texture = ExtResource( 2 )
-offset = Vector2( 0.0275135, -8.93529 )
+offset = Vector2( 0, -9 )
 hframes = 4
 vframes = 4
-frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 9 )
@@ -242,7 +238,7 @@ enabled = true
 cast_to = Vector2( 16, 0 )
 
 [node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 0.264868, 9.00543 )
+position = Vector2( -0.0297602, 9.00543 )
 
 [node name="player" type="Area2D" parent="."]
 position = Vector2( 0, 9 )

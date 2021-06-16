@@ -1025,7 +1025,6 @@ occluder = SubResource( 47 )
 occluder = SubResource( 48 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1114,14 +1113,17 @@ collision_mask = 2
 [node name="Ghost2" parent="." instance=ExtResource( 18 )]
 position = Vector2( 319.597, 46.0346 )
 scale = Vector2( 0.65, 0.65 )
+SPEED = 42.0
 
 [node name="Ghost3" parent="." instance=ExtResource( 19 )]
 position = Vector2( 129.153, 225.747 )
 scale = Vector2( 0.65, 0.65 )
+SPEED = 38.0
 
 [node name="Ghost4" parent="." instance=ExtResource( 20 )]
-position = Vector2( 319.035, 225.839 )
+position = Vector2( 304, 176 )
 scale = Vector2( 0.65, 0.65 )
+SPEED = 35.0
 
 [node name="AvulsosCima" type="TileMap" parent="."]
 modulate = Color( 0.772549, 0.772549, 0.772549, 1 )
@@ -1163,14 +1165,12 @@ shape = SubResource( 53 )
 disabled = true
 
 [node name="Camera" type="Position2D" parent="."]
-visible = false
 position = Vector2( 176, 120 )
 
 [node name="Camera2D" type="Camera2D" parent="Camera"]
 current = true
 
 [node name="Posicoes1" type="Node2D" parent="."]
-visible = false
 
 [node name="1" type="Position2D" parent="Posicoes1"]
 position = Vector2( 48.3742, 223.695 )
@@ -1182,7 +1182,6 @@ position = Vector2( 96, 111.38 )
 position = Vector2( 127.626, 176.069 )
 
 [node name="Posicoes2" type="Node2D" parent="."]
-visible = false
 
 [node name="1" type="Position2D" parent="Posicoes2"]
 position = Vector2( 48, 32 )
