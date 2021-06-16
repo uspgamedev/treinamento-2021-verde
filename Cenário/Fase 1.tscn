@@ -626,6 +626,10 @@ polygon = PoolVector2Array( 8, 40, 40, 40, 40, 104, -8, 104, -8, 80, 32, 80, 32,
 cull_mode = 1
 polygon = PoolVector2Array( -8, 120, 40, 120, 40, 216, 8, 216, 8, 192, 32, 192, 32, 128, -8, 128 )
 
+[sub_resource type="OccluderPolygon2D" id=45]
+cull_mode = 1
+polygon = PoolVector2Array( 328, 184, 312, 184, 312, 136, 328, 136 )
+
 [sub_resource type="OccluderPolygon2D" id=43]
 cull_mode = 1
 polygon = PoolVector2Array( 104, 232, 104, 184, 120, 184, 120, 232 )
@@ -633,10 +637,6 @@ polygon = PoolVector2Array( 104, 232, 104, 184, 120, 184, 120, 232 )
 [sub_resource type="OccluderPolygon2D" id=44]
 cull_mode = 1
 polygon = PoolVector2Array( 264, 232, 264, 184, 296, 184, 296, 232 )
-
-[sub_resource type="OccluderPolygon2D" id=45]
-cull_mode = 1
-polygon = PoolVector2Array( 328, 184, 312, 184, 312, 136, 328, 136 )
 
 [sub_resource type="OccluderPolygon2D" id=46]
 cull_mode = 1
@@ -1006,14 +1006,14 @@ occluder = SubResource( 41 )
 [node name="LightOccluder6" type="LightOccluder2D" parent="Sombras"]
 occluder = SubResource( 42 )
 
+[node name="LightOccluder9" type="LightOccluder2D" parent="Sombras"]
+occluder = SubResource( 45 )
+
 [node name="LightOccluder7" type="LightOccluder2D" parent="Sombras"]
 occluder = SubResource( 43 )
 
 [node name="LightOccluder8" type="LightOccluder2D" parent="Sombras"]
 occluder = SubResource( 44 )
-
-[node name="LightOccluder9" type="LightOccluder2D" parent="Sombras"]
-occluder = SubResource( 45 )
 
 [node name="LightOccluder10" type="LightOccluder2D" parent="Sombras"]
 occluder = SubResource( 46 )
@@ -1029,7 +1029,6 @@ visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="TileMap" type="TileMap" parent="."]
-visible = false
 tile_set = SubResource( 49 )
 cell_size = Vector2( 4, 4 )
 format = 1
@@ -1087,7 +1086,7 @@ script = ExtResource( 11 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 modulate = Color( 0.635294, 0.635294, 0.635294, 1 )
-position = Vector2( 175.744, 92.075 )
+position = Vector2( 240.185, 27.1666 )
 scale = Vector2( 0.6, 0.6 )
 collision_layer = 2
 collision/safe_margin = 0.001
@@ -1108,20 +1107,20 @@ anims/PlayerEntrada = SubResource( 51 )
 
 [node name="Boo" parent="." instance=ExtResource( 16 )]
 position = Vector2( 176.128, 160.762 )
-scale = Vector2( 0.75, 0.75 )
+scale = Vector2( 0.65, 0.65 )
 collision_mask = 2
 
-[node name="Shirley" parent="." instance=ExtResource( 18 )]
-position = Vector2( 318.582, 224.698 )
-scale = Vector2( 0.75, 0.75 )
+[node name="Ghost2" parent="." instance=ExtResource( 18 )]
+position = Vector2( 319.597, 46.0346 )
+scale = Vector2( 0.65, 0.65 )
 
-[node name="Jafferson" parent="." instance=ExtResource( 19 )]
-position = Vector2( 95.6635, 226.7 )
-scale = Vector2( 0.75, 0.75 )
+[node name="Ghost3" parent="." instance=ExtResource( 19 )]
+position = Vector2( 129.153, 225.747 )
+scale = Vector2( 0.65, 0.65 )
 
-[node name="Tõnia" parent="." instance=ExtResource( 20 )]
-position = Vector2( 319.612, 35.3553 )
-scale = Vector2( 0.75, 0.75 )
+[node name="Ghost4" parent="." instance=ExtResource( 20 )]
+position = Vector2( 319.035, 225.839 )
+scale = Vector2( 0.65, 0.65 )
 
 [node name="AvulsosCima" type="TileMap" parent="."]
 modulate = Color( 0.772549, 0.772549, 0.772549, 1 )

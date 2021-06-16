@@ -83,7 +83,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 68.5483, 13.0543 )
+extents = Vector2( 68.5483, 12.4598 )
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 15.034, 71.0281 )
@@ -160,7 +160,7 @@ texture = ExtResource( 2 )
 offset = Vector2( 0, -12 )
 hframes = 5
 vframes = 2
-frame = 8
+frame = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -194,8 +194,10 @@ parameters/playback = SubResource( 20 )
 parameters/Walking/blend_position = Vector2( 0, 0 )
 parameters/a/blend_position = Vector2( -0.00309122, 0 )
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
+[connection signal="area_entered" from="Area2D2" to="." method="_on_Area2D2_area_entered"]
+[connection signal="area_exited" from="Area2D2" to="." method="_on_Area2D2_area_exited"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]
 [connection signal="body_exited" from="Area2D2" to="." method="_on_Area2D2_body_exited"]
 [connection signal="timeout" from="Start_timer" to="." method="_on_Start_timer_timeout"]

@@ -7,7 +7,7 @@ extends KinematicBody2D
 var randomx # Variaveis de posição aleatoria
 var randomy	#
 
-onready var player = get_parent().get_node("Player")
+onready var player = get_parent().get_node("Player").get_node("player")
 
 var player_in_range = false # verifica se o player está no range para ativar o chase
 
@@ -73,11 +73,13 @@ func _change_state(new_state):
 
 
 func _process(delta):
+	print(target_position)
 	if not _state == STATES.FOLLOW:
 		move_decision()
 		return
 	if player_in_range:
-		get_pos_player(player)
+		move_decision()
+		update()
 	var arrived_to_next_point = move_to(target_point_world)
 	if arrived_to_next_point:
 		path.remove(0)
@@ -91,14 +93,14 @@ func _process(delta):
 ############## Comandos de decisão de movimento ################
 
 func get_pos_player(player):
-	target_position.x = int(player.global_position.x /3)
-	target_position.y = int(player.global_position.y /3)
+
+	target_position.x = (player.global_position.x /3)
+	target_position.y = ((player.global_position.y - 3) /3)
 	_change_state(STATES.FOLLOW)
 
 func move_decision():
 	if player_in_range == true:
 		get_pos_player(player)
-		print(target_position)
 	else:
 		if not timer_on:
 			get_patrol_path()
@@ -141,32 +143,12 @@ func animate(direction):
 ############## Comandos de "Visão" do inimigo ################
 
 # Detecção da "visão" horizontal
-#func _on_Area2D_body_entered(body):
-#	print("Vagabundo entrou")
-#	if body == player:
-#		Chase_tolerence_timer.stop()
-#		player_in_range = true
-#
-#func _on_Area2D_body_exited(body):
-#	print("Vagabundo saiu")
-#	if body == player:
-#		Chase_tolerence_timer.stop()
-#		Chase_tolerence_timer.start()
-#		#print("Player no range ", player_in_range)
-## # # # # #
+
+		#print("Player no range ", player_in_range)
+# # # # # #
 #
 ## Detecção da "visão" vertical
-#func _on_Area2D2_body_entered(body):
-#	print("Vagabundo entrou")
-#	if body == player:
-#		Chase_tolerence_timer.stop()
-#		player_in_range = true
-#
-#func _on_Area2D2_body_exited(body):
-#	print("Vagabundo saiu")
-#	if body == player:
-#		Chase_tolerence_timer.stop()
-#		Chase_tolerence_timer.start()
+
 # # # # # #
 
 ############## Comandos de Temporizadores ################
@@ -190,3 +172,27 @@ func _on_Start_timer_timeout():
 func _on_Chase_state_timeout():
 	print("Acabou o tempo")
 	player_in_range = false
+
+
+func _on_Area2D2_area_entered(area):
+	print("Vagabundo entrou")
+	if area == player:
+		player_in_range = true
+
+
+func _on_Area2D2_area_exited(area):
+	print("Vagabundo saiu")
+	if area == player:
+		player_in_range = false
+
+
+func _on_Area2D_area_entered(area):
+	print("Vagabundo entrou")
+	if area == player:
+		player_in_range = true
+
+
+func _on_Area2D_area_exited(area):
+	print("Vagabundo saiu")
+	if area == player:
+		player_in_range = false

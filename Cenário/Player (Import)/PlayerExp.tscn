@@ -1,9 +1,10 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Player (Import)/KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://Player (Import)/spritesheet.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 5.86591, 5.7405 )
 
 [sub_resource type="Animation" id=2]
 loop = true
@@ -193,8 +194,11 @@ end_node = "Andando"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=23]
 
+[sub_resource type="CircleShape2D" id=24]
+radius = 5.539
+
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 19.4149, 36.5107 )
+position = Vector2( 19.4739, 37.6905 )
 scale = Vector2( 0.75, 0.75 )
 script = ExtResource( 1 )
 __meta__ = {
@@ -203,7 +207,9 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="."]
 light_mask = 2
+position = Vector2( -0.0275135, 8.93529 )
 texture = ExtResource( 2 )
+offset = Vector2( 0.0275135, -8.93529 )
 hframes = 4
 vframes = 4
 frame = 1
@@ -235,3 +241,12 @@ parameters/Parado/blend_position = Vector2( 0, 0 )
 position = Vector2( 0, 9 )
 enabled = true
 cast_to = Vector2( 16, 0 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 0.264868, 9.00543 )
+
+[node name="player" type="Area2D" parent="."]
+position = Vector2( 0.157309, 8.96681 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+shape = SubResource( 24 )
