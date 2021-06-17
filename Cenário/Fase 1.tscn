@@ -954,6 +954,12 @@ tracks/0/keys = {
 [sub_resource type="RectangleShape2D" id=53]
 extents = Vector2( 8, 8.00002 )
 
+[sub_resource type="StyleBoxFlat" id=55]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 16
+border_width_top = 12
+border_color = Color( 0, 0, 0, 1 )
+
 [sub_resource type="Animation" id=54]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
@@ -967,12 +973,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ) ]
 }
-
-[sub_resource type="StyleBoxFlat" id=55]
-bg_color = Color( 0, 0, 0, 1 )
-border_width_left = 16
-border_width_top = 12
-border_color = Color( 0, 0, 0, 1 )
+tracks/1/type = "value"
+tracks/1/path = NodePath("../CanvasLayer/ScoreLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ) ]
+}
 
 [node name="Fase 1" type="Node2D"]
 scale = Vector2( 3, 3 )
@@ -1220,10 +1232,25 @@ position = Vector2( 320, 208 )
 [node name="3" type="Position2D" parent="Posicoes4"]
 position = Vector2( 224, 128 )
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="RichTextLabel" parent="CanvasLayer"]
+anchor_right = 0.059
+margin_left = 1128.0
+margin_top = 15.7144
+margin_right = 1158.48
+margin_bottom = 55.7144
+custom_styles/normal = SubResource( 55 )
+custom_colors/default_color = Color( 0.819608, 0.666667, 0.333333, 1 )
+text = "Crystal: 0/5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ColorRect" type="ColorRect" parent="."]
 pause_mode = 2
 margin_left = -48.0
-margin_right = 378.0
+margin_right = 427.0
 margin_bottom = 240.0
 color = Color( 0, 0, 0, 0 )
 __meta__ = {
@@ -1232,17 +1259,3 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
 anims/FadeOut = SubResource( 54 )
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ScoreLabel" type="RichTextLabel" parent="CanvasLayer"]
-anchor_right = 0.059
-margin_left = 1024.81
-margin_top = 15.7144
-margin_right = 1055.29
-margin_bottom = 55.7144
-custom_styles/normal = SubResource( 55 )
-text = "Crystal: 0/5"
-__meta__ = {
-"_edit_use_anchors_": false
-}
