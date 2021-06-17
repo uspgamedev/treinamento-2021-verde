@@ -3,7 +3,11 @@ extends Node2D
 var score = 0
 var i = 0
 
+
 func _process(_delta):
+
+	$CanvasLayer/ScoreLabel.text = "Crystal: " + str(score) + "/5"
+
 	if score == 5 and i == 0:
 		i = 1
 		get_tree().paused = true
