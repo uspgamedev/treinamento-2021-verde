@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=2]
+[gd_scene load_steps=76 format=2]
 
 [ext_resource path="res://Assets/Cenário-Tileset.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Cenário-Tileset2.png" type="Texture" id=2]
@@ -968,6 +968,12 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ) ]
 }
 
+[sub_resource type="StyleBoxFlat" id=55]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 16
+border_width_top = 12
+border_color = Color( 0, 0, 0, 1 )
+
 [node name="Fase 1" type="Node2D"]
 scale = Vector2( 3, 3 )
 script = ExtResource( 6 )
@@ -1025,7 +1031,6 @@ occluder = SubResource( 47 )
 occluder = SubResource( 48 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1227,3 +1232,17 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
 anims/FadeOut = SubResource( 54 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="RichTextLabel" parent="CanvasLayer"]
+anchor_right = 0.059
+margin_left = 1024.81
+margin_top = 15.7144
+margin_right = 1055.29
+margin_bottom = 55.7144
+custom_styles/normal = SubResource( 55 )
+text = "Crystal: 0/5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
